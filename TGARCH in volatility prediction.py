@@ -44,7 +44,8 @@ print(model_fit2.summary())
 
 #calculate the epsilon2 of each log daily return data
 #coefficients are from the AR(1) model summary
-daily_data['epsilon2'] = (daily_data['log_return'] - (0.0006-0.2416*daily_data['log_return'].shift()))**2
+daily_data['epsilon'] = (daily_data['log_return'] - (0.0006-0.2416*daily_data['log_return'].shift()))
+daily_data['epsilon2'] = daily_data['epsilon']**2
 
 #rename the column in rv dataframe
 rv.rename({"squared_return":"Realized Variance"},axis=1,inplace=True)
@@ -54,12 +55,13 @@ rv.rename({"squared_return":"Realized Variance"},axis=1,inplace=True)
 rv['lag_rv'] = rv['Realized Variance'].shift()
 
 #lag epsilon squared factor
-rv = rv.merge(daily_data[['epsilon2','date']],'inner',left_on='Simple Date',right_on='date')
+rv = rv.merge(daily_data[['epsilon2','date','epsilon']],'inner',left_on='Simple Date',right_on='date')
 rv['lag_epsilon2'] = rv['epsilon2'].shift()
+rv['lag_epsilon'] = rv['epsilon'].shift()
 rv.drop('date',axis=1,inplace=True)
 
-#dummy variable lag I where I = 1 when lag epsilon squared factor < 0 and I = 0 when lag epsilon squared factor >= 0 
-rv['I'] = np.where(rv['lag_epsilon2'] > 0, 1, 0)
+#dummy variable lag I where I = 1 when lag epsilon factor < 0 and I = 0 when lag epsilon squared factor >= 0 
+rv['I'] = np.where(rv['lag_epsilon'] < 0, 1, 0)
 
 #combine dummy variable I and lag epsilon squared factor
 rv['I_epsilon'] = rv['I'] * rv['lag_epsilon2']
