@@ -8,7 +8,7 @@ Threshold GARCH model (TGARCH) was proposed by Glosten, Jagannathan and Runkle (
 
 ![image](https://user-images.githubusercontent.com/80605152/142313495-ef0f2b05-dea9-4d89-9fcf-04101eefbf53.png)
 
-#C
+#Realized Variance 
 I used 5 years S&P 500 index data to build the model. First, I used 5 minutes data to calculate the daily realized variance. The autocorrelation graph shows there is serial correlation in realized variance of S&P 500 index. Therefore, we can probably predict future volatility.
 
 ![RV](https://user-images.githubusercontent.com/80605152/142336568-3a5a39c7-5f34-4ec0-825f-f821652bc804.jpg)
