@@ -27,3 +27,5 @@ After calculating the epsilon squared, we can then add a dummy variable I into t
 
 The result of the TGARCH model is as follow:
 ![Screen Shot 2021-11-17 at 7 53 58 PM](https://user-images.githubusercontent.com/80605152/142336917-4d0bdd93-2f31-4a69-8a13-de836db875e7.png)
+
+The R-squared of the model is about 0.4 which pretty high in financial data analysis. 
