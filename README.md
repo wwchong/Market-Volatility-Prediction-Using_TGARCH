@@ -11,7 +11,7 @@ Threshold GARCH model (TGARCH) was proposed by Glosten, Jagannathan and Runkle (
 #C
 I used 5 years S&P 500 index data to build the model. First, I used 5 minutes data to calculate the daily realized variance. The autocorrelation graph shows there is serial correlation in realized variance of S&P 500 index. Therefore, we can probably predict future volatility.
 
-![RV](https://user-images.githubusercontent.com/80605152/142335886-e00e7033-8ef6-4d38-9d20-0734139a77bc.jpg)
+![RV](https://user-images.githubusercontent.com/80605152/142336568-3a5a39c7-5f34-4ec0-825f-f821652bc804.jpg)
 
 #AR(1) Process of S&P 500 Index Log Daily Return
 In order to build TGARCH(1,1) model, we will also need to build a AR(1) model of  S&P 500 index log return in order to calculate the epsilon squared used in TGARCH model. Below is the summary of the AR(1) model:
