@@ -26,6 +26,6 @@ The AR(1) coefficient would be used to calculate the epsilon squared.
 After calculating the epsilon squared, we can then add a dummy variable I into the data and set it to 1 when epsilon squared is negative and set it to 0 when epsilon squared is zero or positive.
 
 The result of the TGARCH model is as follow:
-![Screen Shot 2021-11-17 at 7 53 58 PM](https://user-images.githubusercontent.com/80605152/142336917-4d0bdd93-2f31-4a69-8a13-de836db875e7.png)
+![Screen Shot 2021-11-17 at 9 33 41 PM](https://user-images.githubusercontent.com/80605152/142346989-eafc0de9-6452-4538-88b9-1eb59dbeb19e.png)
 
 The R-squared of the model is about 0.44 which pretty high in financial data analysis. Also, all the coefficients are statistically different from 0. The mean square error in the test data set is about 3.34 x e^-9.
