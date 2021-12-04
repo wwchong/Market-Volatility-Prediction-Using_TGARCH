@@ -2,7 +2,6 @@ import pandas as pd
 import datetime as dt
 import numpy as np
 import matplotlib.pyplot as plt
-from ib_insync import *
 import seaborn as sns
 from statsmodels.tsa.stattools import acf
 from statsmodels.tsa.arima.model import ARIMA
